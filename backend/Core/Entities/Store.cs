@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Product : BaseEntity
+    public class Store : BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public int? MinimumStockLevel { get; set; }
-        public int ProductCategoryId { get; set; }
-        public ProductCategory ProductCategory { get; set; }
+        public int WarehouseId { get; set; }
+        public Warehouse Warehouse { get; set; }
     }
 }

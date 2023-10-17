@@ -8,8 +8,9 @@ namespace Core.Entities
     public class ProductSupplier
     {
         public int Id { get; set; }
+        public decimal PurchasePrice { get; set; }
+        public decimal SellingPrice { get; set; }
         public int ProductId { get; set; }
-        public decimal Price { get; set; }
         public Product Product { get; set; }
         public int SupplierId { get; set; }
         public Supplier Supplier { get; set; }
