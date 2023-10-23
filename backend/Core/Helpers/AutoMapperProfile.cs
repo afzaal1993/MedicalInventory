@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Core.Controllers;
 using Core.DTOs;
+using Core.Entities;
 
-namespace Core.Profiles
+namespace Core.Helpers
 {
-    public class CoreProfile : Profile
+    public class AutoMapperProfile : Profile
     {
-        public CoreProfile()
+        public AutoMapperProfile()
         {
             CreateMap<CreateProductCategoryDto, ProductCategory>();
+            CreateMap<ProductCategory, GetProductCategoryDto>();
         }
     }
 }

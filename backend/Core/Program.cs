@@ -1,6 +1,6 @@
 using AutoMapper;
 using Core.Data;
-using Core.Profiles;
+using Core.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,12 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Auto Mapper Configurations
-var mapperConfig = new MapperConfiguration(mc =>
-{
-    mc.AddProfile(new CoreProfile());
-});
-IMapper mapper = mapperConfig.CreateMapper();
-builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddDbContext<CoreDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
@@ -30,6 +25,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ResponseHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 

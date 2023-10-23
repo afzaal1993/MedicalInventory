@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Core.Data;
 using Core.DTOs;
+using Core.Helpers;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Controllers
 {
@@ -36,6 +39,37 @@ namespace Core.Controllers
 
             if (result.IsCompletedSuccessfully) return StatusCode(201);
             else return BadRequest();
+        }
+
+        [HttpGet]
+        [Route("GetAll")]
+        public async Task<ActionResult<ApiResponse<List<GetProductCategoryDto>>>> GetAll()
+        {
+            var result = await _dbContext.ProductCategories.ToListAsync();
+
+            if (result == null)
+                return BadRequest(ApiResponse<List<GetProductCategoryDto>>.Error("Error Occurred"));
+
+            if (result.Count == 0)
+                return NotFound(ApiResponse<List<GetProductCategoryDto>>.NotFound());
+
+            var dto = _mapper.Map<List<GetProductCategoryDto>>(result);
+
+            return ApiResponse<List<GetProductCategoryDto>>.Success(dto);
+        }
+
+        [HttpGet]
+        [Route("GetById/{id}")]
+        public async Task<ActionResult<ApiResponse<GetProductCategoryDto>>> GetById(int id)
+        {
+            var result = await _dbContext.ProductCategories.FindAsync(id);
+
+            if (result == null)
+                return NotFound(ApiResponse<GetProductCategoryDto>.NotFound());
+
+            var dto = _mapper.Map<GetProductCategoryDto>(result);
+
+            return ApiResponse<GetProductCategoryDto>.Success(dto);
         }
     }
 }
