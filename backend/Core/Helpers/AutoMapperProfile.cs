@@ -14,6 +14,13 @@ namespace Core.Helpers
         {
             CreateMap<CreateProductCategoryDto, ProductCategory>();
             CreateMap<ProductCategory, GetProductCategoryDto>();
+
+            CreateMap<SupplierDto, Supplier>();
+
+            CreateMap<ProductDto, Product>();
+            CreateMap<Product, GetProductDto>()
+                        .ForMember(dest => dest.ProductCategoryName,
+                        opt => opt.MapFrom(src => src.ProductCategory.CategoryName));
         }
     }
 }
