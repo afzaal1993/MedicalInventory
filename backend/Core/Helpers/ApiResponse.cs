@@ -13,12 +13,12 @@ namespace Core.Helpers
 
         public static ApiResponse<T> Success(T data)
         {
-            return new ApiResponse<T> { Status = true, Message = "Operation successful.", Data = data };
+            return new ApiResponse<T> { Status = true, Message = "Operation completed successfully.", Data = data };
         }
 
-        public static ApiResponse<T> Success(List<T> dataList)
+        public static ApiResponse<T> Success()
         {
-            return new ApiResponse<T> { Status = true, Message = "Operation successful.", Data = default };
+            return new ApiResponse<T> { Status = true, Message = "Operation completed successfully.", Data = default };
         }
 
         public static ApiResponse<T> NotFound()
@@ -26,7 +26,7 @@ namespace Core.Helpers
             return new ApiResponse<T> { Status = false, Message = "Object not found.", Data = default };
         }
 
-        public static ApiResponse<T> Error(string errorMessage)
+        public static ApiResponse<T> Error(string errorMessage = "Operation failed")
         {
             return new ApiResponse<T> { Status = false, Message = errorMessage, Data = default };
         }

@@ -13,6 +13,13 @@ namespace Core.DTOs
         public string CreatedBy { get; set; }
     }
 
+    public class UpdateProductCategoryDto
+    {
+        public string CategoryName { get; set; }
+        public string ModifiedBy { get; set; }
+        public bool IsActive { get; set; }
+    }
+
     public class GetProductCategoryDto : BaseEntity
     {
         public string CategoryName { get; set; }

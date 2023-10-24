@@ -139,3 +139,4 @@ D:\HospitalInventory\backend\Core\bin\Debug\net7.0\AutoMapper.Extensions.Microso
 D:\Test\Learning\MedicalInventory\backend\Core\bin\Debug\net7.0\AutoMapper.dll
 D:\Test\Learning\MedicalInventory\backend\Core\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Test\Learning\MedicalInventory\backend\Core\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\HospitalInventory\backend\Core\bin\Debug\net7.0\Newtonsoft.Json.dll

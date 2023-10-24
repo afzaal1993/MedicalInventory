@@ -28,7 +28,7 @@ namespace Core.Helpers
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
                 // Create the error response
-                var errorResponse = ApiResponse<object>.Error("An error occurred while processing your request.");
+                var errorResponse = ApiResponse<string>.Error("An error occurred while processing your request.");
 
 
                 // Serialize the error response to JSON

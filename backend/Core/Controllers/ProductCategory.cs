@@ -27,7 +27,7 @@ namespace Core.Controllers
 
         [HttpPost]
         [Route("Create")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ApiResponse<string>), 201)]
         public async Task<IActionResult> CreateCategory(CreateProductCategoryDto model)
         {
             var category = _mapper.Map<Core.Entities.ProductCategory>(model);
@@ -35,32 +35,63 @@ namespace Core.Controllers
 
             await _dbContext.ProductCategories.AddAsync(category);
 
-            var result = _dbContext.SaveChangesAsync();
+            var result = await _dbContext.SaveChangesAsync();
 
-            if (result.IsCompletedSuccessfully) return StatusCode(201);
-            else return BadRequest();
+            if (result > 0)
+            {
+                return Ok(ApiResponse<string>.Success());
+            }
+            else
+            {
+                return BadRequest(ApiResponse<string>.Error());
+            }
+        }
+
+        [HttpPut]
+        [Route("Update/{id}")]
+        [ProducesResponseType(typeof(ApiResponse<string>), 200)]
+        public async Task<IActionResult> Update(int id, UpdateProductCategoryDto model)
+        {
+            var existingCategory = await _dbContext.ProductCategories.FindAsync(id);
+
+            if (existingCategory == null)
+                return NotFound(ApiResponse<string>.NotFound());
+
+            existingCategory.CategoryName = model.CategoryName;
+            existingCategory.ModifiedBy = "admin";
+            existingCategory.ModifiedDate = DateTime.Now;
+
+            var result = await _dbContext.SaveChangesAsync();
+
+            if (result > 0)
+                return Ok(ApiResponse<string>.Success());
+            else
+                return BadRequest(ApiResponse<string>.Error());
         }
 
         [HttpGet]
         [Route("GetAll")]
-        public async Task<ActionResult<ApiResponse<List<GetProductCategoryDto>>>> GetAll()
+        [ProducesResponseType(typeof(ApiResponse<List<GetProductCategoryDto>>), 200)]
+        public async Task<IActionResult> GetAll()
         {
             var result = await _dbContext.ProductCategories.ToListAsync();
 
             if (result == null)
-                return BadRequest(ApiResponse<List<GetProductCategoryDto>>.Error("Error Occurred"));
+                return BadRequest(ApiResponse<string>.Error("Error Occurred"));
 
-            if (result.Count == 0)
-                return NotFound(ApiResponse<List<GetProductCategoryDto>>.NotFound());
+            if (result.Count() == 0)
+                return NotFound(ApiResponse<string>.NotFound());
 
             var dto = _mapper.Map<List<GetProductCategoryDto>>(result);
 
-            return ApiResponse<List<GetProductCategoryDto>>.Success(dto);
+            var response = ApiResponse<List<GetProductCategoryDto>>.Success(dto);
+            return Ok(response);
         }
 
         [HttpGet]
         [Route("GetById/{id}")]
-        public async Task<ActionResult<ApiResponse<GetProductCategoryDto>>> GetById(int id)
+        [ProducesResponseType(typeof(ApiResponse<GetProductCategoryDto>), 200)]
+        public async Task<IActionResult> GetById(int id)
         {
             var result = await _dbContext.ProductCategories.FindAsync(id);
 
@@ -69,7 +100,8 @@ namespace Core.Controllers
 
             var dto = _mapper.Map<GetProductCategoryDto>(result);
 
-            return ApiResponse<GetProductCategoryDto>.Success(dto);
+            var response = ApiResponse<GetProductCategoryDto>.Success(dto);
+            return Ok(response);
         }
     }
 }
