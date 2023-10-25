@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj": {}
+    "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj": {}
   },
   "projects": {
-    "D:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj": {
+    "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj",
+        "projectUniqueName": "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj",
         "projectName": "IAM",
-        "projectPath": "D:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj",
+        "projectPath": "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj",
         "packagesPath": "C:\\Users\\mafaroq\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\obj\\",
+        "outputPath": "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mafaroq\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,6 @@
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,7 +39,25 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
             },
