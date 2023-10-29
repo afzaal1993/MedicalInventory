@@ -1,26 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj": {}
+    "D:\\MedicalInventory\\backend\\IAM\\IAM.csproj": {}
   },
   "projects": {
-    "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj": {
+    "D:\\MedicalInventory\\backend\\IAM\\IAM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj",
+        "projectUniqueName": "D:\\MedicalInventory\\backend\\IAM\\IAM.csproj",
         "projectName": "IAM",
-        "projectPath": "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\IAM.csproj",
-        "packagesPath": "C:\\Users\\mafaroq\\.nuget\\packages\\",
-        "outputPath": "d:\\Test\\Learning\\MedicalInventory\\backend\\IAM\\obj\\",
+        "projectPath": "D:\\MedicalInventory\\backend\\IAM\\IAM.csproj",
+        "packagesPath": "C:\\Users\\afzaal\\.nuget\\packages\\",
+        "outputPath": "D:\\MedicalInventory\\backend\\IAM\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mafaroq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\afzaal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +43,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -85,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
