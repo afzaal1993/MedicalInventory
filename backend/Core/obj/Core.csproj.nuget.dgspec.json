@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MedicalInventory\\backend\\Core\\Core.csproj": {}
+    "D:\\Test\\Learning\\MedicalInventory\\backend\\Core\\Core.csproj": {}
   },
   "projects": {
-    "D:\\MedicalInventory\\backend\\Core\\Core.csproj": {
+    "D:\\Test\\Learning\\MedicalInventory\\backend\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MedicalInventory\\backend\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Test\\Learning\\MedicalInventory\\backend\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\MedicalInventory\\backend\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\afzaal\\.nuget\\packages\\",
-        "outputPath": "D:\\MedicalInventory\\backend\\Core\\obj\\",
+        "projectPath": "D:\\Test\\Learning\\MedicalInventory\\backend\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\mafaroq\\.nuget\\packages\\",
+        "outputPath": "D:\\Test\\Learning\\MedicalInventory\\backend\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\afzaal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mafaroq\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

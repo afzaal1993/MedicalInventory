@@ -21,6 +21,10 @@ namespace Core.Helpers
             CreateMap<Product, GetProductDto>()
                         .ForMember(dest => dest.ProductCategoryName,
                         opt => opt.MapFrom(src => src.ProductCategory.CategoryName));
+
+            CreateMap<WarehouseDto, Warehouse>();
+
+            CreateMap<StoreDto, Store>();
         }
     }
 }
